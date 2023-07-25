@@ -24,6 +24,9 @@ jobs:
     - name: Build frontend
       run: npm run build
 
+    - name: Rename dist directory
+      run: mv dist vue-project
+
     - name: Upload dist folder to server
       uses: appleboy/scp-action@master
       with:
@@ -31,6 +34,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        source: dist
+        source: vue-project
         target: /hccloud/appserver/examine-tomcat-8096/webapps
 

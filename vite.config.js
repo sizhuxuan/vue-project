@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/vue-flight-pods',
+  base: '/vue-project/',
   plugins: [
     vue(),
   ],
